@@ -33,7 +33,6 @@ public abstract class AbstractCar {
 
     public abstract String getFactoryName();
 
-
     @Override
     abstract public String toString();
 }

@@ -12,6 +12,7 @@ public class CarFactoryApplication {
     private static CarOrderService orderCarService = new CarOrderService();
 
     public static void main(String args[]) {
+
         boolean exitApplication = false;
         do {
             int menuOption = 0;

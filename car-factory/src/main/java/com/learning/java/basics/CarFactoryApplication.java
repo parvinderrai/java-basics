@@ -1,13 +1,13 @@
 package com.learning.java.basics;
 
 import com.learning.java.basics.model.Car;
-import com.learning.java.basics.service.OrderCarService;
+import com.learning.java.basics.service.CarOrderService;
 
 import java.util.Scanner;
 
 public class CarFactoryApplication {
 
-    private static OrderCarService orderCarService = new OrderCarService();
+    private static CarOrderService orderCarService = new CarOrderService();
 
     public static void main(String args[]) {
 
