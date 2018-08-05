@@ -31,13 +31,8 @@ public abstract class AbstractCar {
         this.color = color;
     }
 
-    public String getFactoryName() {
-        return factoryName;
-    }
+    public abstract String getFactoryName();
 
-    public static void setFactoryName(String factoryName) {
-        Car.factoryName = factoryName;
-    }
 
     @Override
     abstract public String toString();

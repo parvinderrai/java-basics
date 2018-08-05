@@ -1,10 +1,12 @@
 package com.learning.java.basics.service;
 
-import com.learning.java.basics.model.Car;
 import com.learning.java.basics.model.CarOrder;
 import com.learning.java.basics.repository.ArrayOrderRepository;
 import com.learning.java.basics.repository.FileOrderRepository;
 import com.learning.java.basics.repository.OrderRepository;
+
+import java.io.IOException;
+import java.text.ParseException;
 
 public class CarOrderService {
 
@@ -14,9 +16,11 @@ public class CarOrderService {
     public CarOrderService() {
         String carStorage=System.getProperty("car.storage");
 
-        if(carStorage!=null || carStorage.length()!=0 || carStorage.equalsIgnoreCase("file")) {
+        if(carStorage!=null && carStorage.length()!=0 && carStorage.equalsIgnoreCase("file")) {
+            System.out.println("Using file storage.");
             orderRepository=new FileOrderRepository();
         }else {
+            System.out.println("Using in-memory storage.");
             orderRepository=new ArrayOrderRepository();
         }
     }
@@ -28,7 +32,14 @@ public class CarOrderService {
 
     public void displayOrders() {
         System.out.printf("Showing current orders...");
-        CarOrder[] carOrders = orderRepository.findAll();
+        CarOrder[] carOrders = new CarOrder[0];
+        try {
+            carOrders = orderRepository.findAll();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         for(int i=0; i<carOrders.length;i++)
             System.out.printf("%s%n",carOrders[i]);
     }

@@ -12,6 +12,11 @@ public class HondaCar extends AbstractCar {
     }
 
     @Override
+    public String getFactoryName() {
+        return factoryName;
+    }
+
+    @Override
     public String toString() {
         return this.factoryName + "|"+ this.name + "|" + this.color;
     }

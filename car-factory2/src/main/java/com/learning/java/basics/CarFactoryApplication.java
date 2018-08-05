@@ -1,6 +1,5 @@
 package com.learning.java.basics;
 
-import com.learning.java.basics.model.Car;
 import com.learning.java.basics.model.CarOrder;
 import com.learning.java.basics.model.HondaCar;
 import com.learning.java.basics.model.TataCar;
@@ -13,7 +12,6 @@ public class CarFactoryApplication {
     private static CarOrderService orderCarService = new CarOrderService();
 
     public static void main(String args[]) {
-
         boolean exitApplication = false;
         do {
             int menuOption = 0;
