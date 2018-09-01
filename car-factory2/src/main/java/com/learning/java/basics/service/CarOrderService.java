@@ -43,4 +43,9 @@ public class CarOrderService {
         for(int i=0; i<carOrders.length;i++)
             System.out.printf("%s%n",carOrders[i]);
     }
+
+    public int getOrderCount() throws IOException, ParseException {
+        return orderRepository.findAll().length;
+    }
+
 }

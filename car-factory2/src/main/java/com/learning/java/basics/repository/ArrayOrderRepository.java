@@ -10,11 +10,18 @@ public class ArrayOrderRepository implements OrderRepository {
 
     @Override
     public CarOrder save(CarOrder carOrder) {
-        return null;
+        carOrders[numberOfOrders] = carOrder;
+        numberOfOrders++;
+        return  carOrder;
     }
 
     @Override
     public CarOrder[] findAll() {
-        return new CarOrder[0];
+        CarOrder[] currentOrders = new CarOrder[numberOfOrders];
+
+        for(int i=0;i<numberOfOrders;i++)
+            currentOrders[i]=carOrders[i];
+
+        return currentOrders;
     }
 }
